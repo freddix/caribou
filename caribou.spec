@@ -1,11 +1,11 @@
 Summary:	On-screen keyboard
 Name:		caribou
-Version:	0.4.6
+Version:	0.4.7
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/caribou/0.4/%{name}-%{version}.tar.xz
-# Source0-md5:	60fc1b7b1fd0449f7a1155c960d0774a
+# Source0-md5:	3f27abc0f303b531825104b456660378
 URL:		http://live.gnome.org/Caribou
 BuildRequires:	autoconf
 BuildRequires:	automake
