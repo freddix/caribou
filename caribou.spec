@@ -1,11 +1,11 @@
 Summary:	On-screen keyboard
 Name:		caribou
-Version:	0.4.7
+Version:	0.4.8
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/caribou/0.4/%{name}-%{version}.tar.xz
-# Source0-md5:	3f27abc0f303b531825104b456660378
+# Source0-md5:	f43717157c8f4f77a0503f1c54d42abb
 URL:		http://live.gnome.org/Caribou
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -112,7 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_datadir}/caribou
 %{_datadir}/glib-2.0/schemas/org.gnome.caribou.gschema.xml
-%{_desktopdir}/caribou.desktop
 %{_sysconfdir}/xdg/autostart/caribou-autostart.desktop
 %{py_sitescriptdir}/caribou
 
@@ -130,9 +129,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libcaribou.so
 %{_includedir}/libcaribou
 %{_datadir}/gir-1.0/Caribou-1.0.gir
+%{_pkgconfigdir}/*.pc
+%{_datadir}/vala/vapi/*.deps
+%{_datadir}/vala/vapi/*.vapi
 
 %files gtk+-module
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/libcaribou-gtk-module.so
-
 
