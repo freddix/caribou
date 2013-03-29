@@ -1,7 +1,7 @@
 Summary:	On-screen keyboard
 Name:		caribou
 Version:	0.4.10
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/caribou/0.4/%{name}-%{version}.tar.xz
@@ -46,19 +46,18 @@ Caribou library.
 %package devel
 Summary:	Development files for Caribou
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package provides development files for Caribou.
 
 %package gtk+-module
-Summary:	Gtk2 im module for %{name}
+Summary:	GTK+ IM module for %{name}
 Group:		Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	gtk+
 
 %description gtk+-module
-This package contains caribou im module for Gtk2.
+This package contains caribou IM module for GTK+.
 
 %prep
 %setup -q
