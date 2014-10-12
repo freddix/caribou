@@ -1,11 +1,11 @@
 Summary:	On-screen keyboard
 Name:		caribou
-Version:	0.4.13
+Version:	0.4.15
 Release:	1
 License:	LGPL v2+
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/caribou/0.4/%{name}-%{version}.tar.xz
-# Source0-md5:	e4913478c220f7df6fd5adef6f654c0e
+# Source0-md5:	5fe8ee58432efb5f6671ca03a9c92800
 URL:		http://live.gnome.org/Caribou
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_postclean
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-*/modules/libcaribou-gtk-module.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/{,gtk-*/modules/}*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -99,14 +99,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/caribou
 %attr(755,root,root) %{_bindir}/caribou-preferences
 
 %dir %{_libexecdir}
+%attr(755,root,root) %{_libexecdir}/caribou
 %attr(755,root,root) %{_libexecdir}/antler-keyboard
 
 %{_datadir}/antler
 %{_datadir}/dbus-1/services/org.gnome.Caribou.Antler.service
+%{_datadir}/dbus-1/services/org.gnome.Caribou.Daemon.service
 %{_datadir}/glib-2.0/schemas/org.gnome.antler.gschema.xml
 
 %{_datadir}/caribou
